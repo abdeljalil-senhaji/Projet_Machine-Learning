@@ -1,6 +1,3 @@
-
-## Import of all potentially used modules
-
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
@@ -16,17 +13,19 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import learning_curve
 from sklearn.metrics import plot_confusion_matrix 
 
-#-------------------------------------------------------------------------------------------#
-# Create simple model regression logistic multinomial 
-#-------------------------------------------------------------------------------------------#
+
+
+#------------------ Create simple model regression logistic multinomial ----------------------#
+
+
 
 def regression_multinomial(X, Y):
     '''
-	@param X: genetic expression of all genes
-	@param Y: labels, type of cancer
+	@param X: expression genes 
+	@param Y: type of cancer
 	'''
     
-    ##### Creation of scaled test and training data
+
 
     X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.33, random_state=1)
 
@@ -35,15 +34,15 @@ def regression_multinomial(X, Y):
 
     logreg.fit(X_train, y_train)
 
-    # Train the model
+
     model = logreg.predict(X_test)
 
-    # Accuracu 
+
     acc_reg=metrics.accuracy_score(y_test, model)
     print("Accuracy for simple model regression logistic testing :", acc_reg)
 
     
-    # # Evaluate the model
+
 
     df_confusion=confusion_matrix(y_test, model)
     cmap=plt.cm.RdPu
@@ -55,14 +54,6 @@ def regression_multinomial(X, Y):
     plt.colorbar()
     plt.savefig("./output/Regression_logistic/simple_regression_logistic_multinomial.png")
 
-
-#     #learn curve
-
-#     train_size=np.linspace(.1, 1.0, 15)
-#     cv=10
-#     Learning_curve_model(X_test, y_test, logreg, cv, train_size)
-#     plt.savefig("../output/Regression_logistic/learning_curve.pdf")
-#     #plt.show()
 
 
 # Learning curve

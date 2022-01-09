@@ -39,7 +39,8 @@ Projet_Machine_Learning
 ├── doc
 ├── environment.yml
 ├── lib
-│   ├── Analysis_Data.py
+│   ├── ACP.py
+|   ├── Analysis_Data.py
 │   ├── Decision_Tree.py
 │   ├── Extra_Trees_Classifier.py
 │   ├── logistic_Regression.py
@@ -61,24 +62,6 @@ Projet_Machine_Learning
 python main.py
 ```
 
-
-## Built With
-
-> [Code::visual::studio](https://code.visualstudio.com/) - The IDE used
-
-> [Python](https://www.python.org/) - language use
-
-> [NumPy](https://numpy.org/) -  library used
-
-> [Pandas](https://pandas.pydata.org/) - library used Python Data Analysis
-
-> [scikit-learn](https://scikit-learn.org/stable/) - library used Machine Learning in Python
-
-> [Matplotlib](https://matplotlib.org/) - library used Visualization with Python
-
-> [Keras](https://keras.io/) - library used Deep Learning with Python
-
-> [GitHub](https://github.com/abdeljalil-senhaji/Projet_Machine_Learning) - Our original repository
 
 
 
@@ -142,6 +125,26 @@ Decision tree (DT) is a non-parametric supervised learning method used for class
 
 Artificial neural networks (ANN) is one of the models commonly used and developed to study the relationship between linear or non-linear input-output models, they try to generalize the training group, and then estimate the group test. The performance of ANNs is measured with the success of the prediction. I implemented a script that calculates the prediction score and displays the curve of loss function Network_ANN.py.
 
+
+## Built With
+
+> [Code::visual::studio](https://code.visualstudio.com/) - The IDE used
+
+> [Python](https://www.python.org/) - language use
+
+> [NumPy](https://numpy.org/) -  library used
+
+> [Pandas](https://pandas.pydata.org/) - library used Python Data Analysis
+
+> [scikit-learn](https://scikit-learn.org/stable/) - library used Machine Learning in Python
+
+> [Matplotlib](https://matplotlib.org/) - library used Visualization with Python
+
+> [Keras](https://keras.io/) - library used Deep Learning with Python
+
+> [GitHub](https://github.com/abdeljalil-senhaji/Projet_Machine_Learning) - Our original repository
+
+.
 ---------------------
 ## Author
 

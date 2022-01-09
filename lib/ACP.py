@@ -12,7 +12,7 @@ from sklearn.decomposition import PCA
 
 def plotACP(X, Y):
 	'''
-	@param predict:  Y type of cancer
+	@param predict: type of cancer
 	'''
 	pca = decomposition.PCA(n_components=5)
 	X_PCA = pca.fit_transform(X)

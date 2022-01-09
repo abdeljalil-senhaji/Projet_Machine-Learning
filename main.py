@@ -3,10 +3,7 @@
 
 import pandas as pd
 import numpy as np
-from sklearn.preprocessing import MinMaxScaler
-from sklearn import decomposition 
-from sklearn import preprocessing
-from sklearn.preprocessing import LabelEncoder
+
 
 from lib.Extra_Trees_Classifier import classificationTree, importantFeatures
 from lib.Analysis_Data import plotStat
@@ -14,7 +11,6 @@ from lib.ACP import plotACP
 from lib.Decision_Tree import decisionTree
 from lib.Network_ANN import ANN
 from lib.logistic_Regression import regression_multinomial
-
 
 
 
@@ -37,11 +33,6 @@ def main():
     X = df_data.iloc[1:,1:]
     # must predict y
     Y = df_labels.iloc[1:,1]
-    
-
-    #preprocess data  
-    # LabelEn = preprocessing.LabelEncoder()
-    # Y = LabelEn.fit_transform(Y)
 
 
     #---------------- Plloting statics analysis data ----------------#

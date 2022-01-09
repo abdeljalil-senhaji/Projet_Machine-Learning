@@ -10,41 +10,39 @@ from sklearn import metrics
 
 def classificationTree(X, Y):
 	'''
-	@param X: genetic expression of all genes
-	@param Y: labels, type of cancer
+	@param X: expression genes
+	@param Y: type of cancer
 	'''
 
-	# n-estimators parameters to test
 	list_n_estimators = [5, 10, 20, 30, 40, 50, 70, 80, 100, 120, 130, 150, 170, 185, 200, 250, 300, 350, 400, 450, 500]
 
-	# Lists to save accuracy values
+
 	list_accuracy_training = []	
 	list_accuracy_testing = []	
 	
 	for n in list_n_estimators: 
 	
-		# Split data into train and test datas
+
 		X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.3, stratify = Y, random_state=42)
 		
-		# Create model
+
 		model = ExtraTreesClassifier(n_estimators=n, random_state=0)
 
-		# Fit the model
+
 		model.fit(X_train, y_train)
 
-		# Test model
+
 		Z = model.predict(X_test)
 			
-		# Calculate training accuracy
+
 		training_accuracy = accuracy_score(y_train, model.predict(X_train))
 		list_accuracy_training.append(training_accuracy)
 		
-		# Calculate testing accuracy
+
 		testing_accuracy = accuracy_score(y_test, Z)
 		list_accuracy_testing.append(testing_accuracy)
 
-				
-	# Plot accuracies according to n_estimators
+			
 	plt.style.use('ggplot')
 	plt.plot(list_n_estimators, list_accuracy_training, color='red', label = 'Entraînement')
 	plt.plot(list_n_estimators, list_accuracy_testing, color='blue', label = 'Test')
@@ -55,21 +53,19 @@ def classificationTree(X, Y):
 
 
 
-
 def importantFeatures(X, Y, nb_best_genes):
 	'''
-	Retrieve the importance of all features and select the better.
-	@param X: gene expression of all genes
-	@param Y: labels of types of cancer
+	@param X: gene expression 
+	@param Y: types of cancer
 	@param nb_best_genes: the number of best genes to select
 	'''
 
-	# Save genes ans their precisions
+
 	best_genes_and_precisions = []
 	
 	dict_precision_means = {}
 		
-	# Split data into train and test datas
+
 	X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.33, stratify = Y, random_state=42)
 			
 	# Create model
@@ -82,13 +78,13 @@ def importantFeatures(X, Y, nb_best_genes):
 	Z = model.predict(X_test)
 	#print(pd.crosstab(y_test,Z))
 		
-	# Take important features
+
 	feat_importances = pd.DataFrame(model.feature_importances_, index = X.columns) 
 		
-	# Select genes with the better precisions
+
 	feat_importances = feat_importances.nlargest(nb_best_genes, columns = 0)
 
-	# Plot graph of best features
+
 	len_feat_importances = range(len(feat_importances))
 	plt.bar(len_feat_importances, feat_importances[0])
 	plt.xticks(len_feat_importances, feat_importances.index)
@@ -97,6 +93,3 @@ def importantFeatures(X, Y, nb_best_genes):
 	plt.xticks(rotation = 15, ha="right")
 	plt.style.use('ggplot')
 	plt.savefig("./output/ExtraTreesClassifier/boxplotBestFeatures_{}genes.png".format(nb_best_genes), dpi=300)
-
-	# Return name of important genes
-	return list(feat_importances.index)

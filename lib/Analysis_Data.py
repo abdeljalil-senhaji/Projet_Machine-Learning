@@ -8,13 +8,12 @@ from sklearn.decomposition import PCA
 import seaborn as sns
 
 
-	#---------------------------------#
-    ##### Distribution of input data :
-    #---------------------------------#
+#-----------------Distribution of input data---------------#
+
 
 def plotStat(predict):
 	'''
-	@param predict:  Y type of cancer
+	@param predict:  type of cancer
 	'''
 	plt.hist(predict)
 	plt.title('Distribution of the input variables')
