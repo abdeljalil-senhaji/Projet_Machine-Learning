@@ -14,6 +14,14 @@ def plotACP(X, Y):
 	'''
 	@param predict: type of cancer
 	'''
+	#convert X to numpy matrix
+	X=np.array(X)
+
+	#preprocess data  
+	pre = preprocessing.LabelEncoder()
+	pre.fit(Y)
+	Y=pre.transform(Y)
+	#PCA
 	pca = decomposition.PCA(n_components=5)
 	X_PCA = pca.fit_transform(X)
     # visualize the data after PCA is performed

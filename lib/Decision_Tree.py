@@ -15,13 +15,15 @@ def decisionTree(X, Y):
 	'''
 
     X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.33, random_state=1) 
-
+    
     model = DecisionTreeClassifier()
 
 
     model = model.fit(X_train,y_train)
+    # Train the model
     y_pred = model.predict(X_test)
 
+    # Evaluate the model
     acc_decision_tree= metrics.accuracy_score(y_test, y_pred)
 
     print(" Accuracy for tree decision testing : ", acc_decision_tree)
@@ -30,7 +32,7 @@ def decisionTree(X, Y):
     tree.plot_tree(model, filled=True, rounded=True)
     plt.savefig('./output/Decision_tree/tree_decision.png')
     plot_confusion_matrix(model, X_test, y_test, cmap='Blues', normalize='true', display_labels=['BRCA', 'PRAD', 'COAD', 'LUAD', 'KIRC'])
-    plt.show()
+    #plt.show()
     
     plt.title("Confusion matrix for Decision Tree")
     plt.ylabel('True label')

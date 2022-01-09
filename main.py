@@ -45,7 +45,7 @@ def main():
 
     classificationTree(X, Y)
 
-    # Determine important features/genes (n)
+    # Determine important genes 
 
     genesImportant =  [10, 15, 20]
 
