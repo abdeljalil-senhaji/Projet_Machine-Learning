@@ -1,12 +1,16 @@
 [![Documentation](https://img.shields.io/badge/Documentation-github-brightgreen.svg?style=for-the-badge)](https://github.com/abdeljalil-senhaji/Quiz_Cell_Images)
 ![](https://img.shields.io/conda/l/conda-forge/setuptools)
+![](https://img.shields.io/pypi/pyversions/keras)
 
-# Predicting a Type of Cancer Using 4 Different Machine Learning Algorithms
+Predicting a Type of Cancer Using 4 Different Machine Learning Algorithms
+==========================================
 
-
+## Project description
+------------------------
+In this project, 4 machine learning models to be used for cancer prediction were constructed using genes that encode human proteins 20531. More precisely, we predict the class of 5 cancers LUAD, COAD, PRAD, KIRC and BRCA, respectively breast cancer, kidney and kidney cancer, colorectal cancer, lung cancer and prostate cancer according to the level of expression of these genes in 801 individuals (RNA-Seq).
 
 ## Requirements
-
+------------------------
  
 Creating an environment with commands :
 
@@ -30,6 +34,7 @@ conda env create -f environment.yml
 ```
 
 ## Architecture
+------------------------
 
 ```
 Projet_Machine_Learning
@@ -57,6 +62,7 @@ Projet_Machine_Learning
 ```
 
 ## Running
+------------------------
 
 ```
 python main.py
@@ -64,11 +70,8 @@ python main.py
 
 
 
-
-
-
 ## Data source
-
+------------------------
 
 Gene expression cancer RNA-Seq Data Set : 
 https://archive.ics.uci.edu/ml/datasets/gene+expression+cancer+RNA-Seq
@@ -91,6 +94,7 @@ Input: CSV files
 
 
 ## Description
+------------------------
 
 In this project, I implemented 4 machine learning algorithms to classify the RNA-Seq cancer data from the TCGA project.
 
@@ -127,6 +131,7 @@ Artificial neural networks (ANN) is one of the models commonly used and develope
 
 
 ## Built With
+------------------------
 
 > [Code::visual::studio](https://code.visualstudio.com/) - The IDE used
 
@@ -144,9 +149,9 @@ Artificial neural networks (ANN) is one of the models commonly used and develope
 
 > [GitHub](https://github.com/abdeljalil-senhaji/Projet_Machine_Learning) - Our original repository
 
-.
----------------------
-## Author
 
+
+## Author
+------------------------
 * **Senhaji Rachik Abdeljalil** 
 
